@@ -11,5 +11,5 @@ class Wall(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.x = x
         self.y = y
-        self.rect.x = self.x * TILESIZE
-        self.rect.y = self.y * TILESIZE
+        self.rect.x = x * TILESIZE
+        self.rect.y = y * TILESIZE
