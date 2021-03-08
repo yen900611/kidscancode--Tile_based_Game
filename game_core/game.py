@@ -14,7 +14,8 @@ class Game:
         pygame.display.set_caption("Game!")
         self.new()
         self.clock = pygame.time.Clock()
-        pygame.key.set_repeat(50, 25)
+        self.delay_time = 0
+        pygame.key.set_repeat(500, 100)
         self.load_data()
         self.isRunning = True
 
@@ -58,27 +59,7 @@ class Game:
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_ESCAPE:
                     self.isRunning = False
-                if event.key == pygame.K_LEFT:
-                    self.player.move(-1)
-                if event.key == pygame.K_RIGHT:
-                    self.player.move(1)
-                if event.key == pygame.K_UP:
-                    self.player.move(dy=-1)
-                if event.key == pygame.K_DOWN:
-                    self.player.move(dy=1)
-        # keys = pygame.key.get_pressed()
-        # if keys[pygame.K_ESCAPE]:
-        #     self.isRunning = False
-        # if keys[pygame.K_LEFT]:
-        #     self.player.move(-1)
-        # if keys[pygame.K_RIGHT]:
-        #     self.player.move(1)
-        # if keys[pygame.K_UP]:
-        #     self.player.move(dy=-1)
-        # if keys[pygame.K_DOWN]:
-        #     self.player.move(dy=1)
-
-        pass
+                pass
 
     def draw_grid(self):
         for x in range(0,WIDTH,TILESIZE):
