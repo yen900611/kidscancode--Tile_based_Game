@@ -18,7 +18,6 @@ class Player(pygame.sprite.Sprite):
         self.get_keys()
         self.x += self.vx * self.game.delay_time
         self.y += self.vy * self.game.delay_time
-        self.rect.topleft = self.x, self.y
         self.rect.x = self.x
         self.collide_with_walls("x")
         self.rect.y = self.y
