@@ -22,7 +22,9 @@ class Game:
 
     def load_data(self):
         game_folder = path.dirname(__file__)
+        img_folder = path.join(path.dirname(__file__), "image")
         self.map = Map(path.join(game_folder, "map_big.txt"))
+        self.player_image = pygame.image.load(path.join(img_folder, PLAYER_IMAGE)).convert_alpha()
         pass
 
     def new(self):
