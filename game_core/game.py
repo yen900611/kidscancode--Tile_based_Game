@@ -24,7 +24,7 @@ class Game:
         game_folder = path.dirname(__file__)
         img_folder = path.join(path.dirname(__file__), "image")
         self.map = Map(path.join(game_folder, "map_big.txt"))
-        self.player_image = pygame.image.load(path.join(img_folder, PLAYER_IMAGE)).convert_alpha()
+        self.player_image = pygame.transform.scale(pygame.image.load(path.join(img_folder, PLAYER_IMAGE)).convert_alpha(),(TILESIZE,TILESIZE))
         pass
 
     def new(self):
@@ -50,6 +50,7 @@ class Game:
         self.draw_grid()
         for sprite in self.all_sprites:
             self.screen.blit(sprite.image, self.camera.apply(sprite))
+        # pygame.draw.rect(self.screen, WHITE,self.player.hit_rect, 1)
         pygame.display.flip()
 
     def event(self):
